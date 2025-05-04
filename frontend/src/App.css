@@ -1,0 +1,172 @@
+/* src/App.css */
+
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f9;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Navigation Bar Styles */
+.header {
+  background-color: #fff; /* White background */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  padding: 50px; /* Increased padding for thickness */
+  display: flex;
+  justify-content: space-between; /* Align items horizontally */
+  align-items: center; /* Vertically center items */
+  height: 80px; /* Increased height for thickness */
+}
+
+.nav-links {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 20px;
+  align-items: center; /* Ensure vertical alignment */
+}
+/* Increase the font size for the "Home" link specifically */
+.nav-links li a.home-link {
+  font-size: 34px; /* Larger font size for "Home" */
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.nav-links li a:hover {
+  color: #007bff;
+}
+
+button[type="submit"] {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+.content {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  /*background-color: #4caf50;  Green theme */
+  color: #fff;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-links ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #e8f5e9; /* Light green hover effect */
+}
+
+.search-bar input {
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+  width: 200px;
+}
+
+.container {
+  padding: 20px;
+  text-align: center;
+  max-height: 500px; /* Limits the height to 500px */
+  height: auto;
+}
+
+.heading {
+  font-size: 2.5rem;
+  margin-top: 0px;
+  font-weight: bold;
+  padding: 20px;
+}
+
+.button-group {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 100px;
+}
+
+.card {
+  max-width: 345px;
+  margin: 0 auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  height: auto;
+}
+
+.card-actions {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+/* Ensure the App container uses flexbox */
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensure the app takes up at least the full viewport height */
+}
+
+/* Main content should take up remaining space */
+.content {
+  flex-grow: 1; /* Allow main content to expand and push footer down */
+}
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensure the app takes up the full viewport height */
+}
+
+.content {
+  flex-grow: 1; /* Allow main content to expand and push the footer down */
+}
+
+footer {
+  background-color: #333; /* Example footer background */
+  color: #fff; /* White text */
+  padding: 20px;
+  text-align: center;
+}

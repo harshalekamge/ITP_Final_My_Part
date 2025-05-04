@@ -1,0 +1,105 @@
+/* src/App.css or CardList.css */
+
+/* Reset default margins and paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+}
+
+.knowledge-hub {
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.header h1 {
+    font-size: 2em;
+    color: #333;
+}
+
+.sections {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three columns on larger screens */
+    gap: 20px;
+}
+
+.section {
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #7cbf77;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease; /* Add hover effect */
+}
+
+.section:hover {
+    transform: scale(1.05); /* Slightly zoom in on hover */
+}
+
+.section-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.section h2 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+.section p {
+    font-size: 1em;
+    color: #555;
+    line-height: 1.6;
+}
+
+.learn-more {
+    display: inline-block;
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 10px;
+}
+/* Ensure the App container takes up full viewport height */
+.App {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Main content should take up remaining space */
+  .content {
+    flex-grow: 1;
+  }
+  
+  /* Footer should stick to the bottom */
+  footer {
+    bottom: 0;
+    width: 100%;
+  }
+
+/* Responsive layout */
+@media (max-width: 768px) {
+    .sections {
+        grid-template-columns: 1fr 1fr; /* Two columns on medium screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .sections {
+        grid-template-columns: 1fr; /* Single column on small screens */
+    }
+}
