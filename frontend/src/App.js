@@ -11,6 +11,9 @@ import UserView from "./components/Products/ProductsView";
 import Header from "./components/Header/Header"; // Import the new Header component
 import Footer from "./components/Footer/Footer"; // Import the Footer component
 import MarketingPage from './components/marketing-page/MarketingPage'; // Import the MarketingPage component
+import ProductsView from "./components/Products/ProductsView"; // Import ProductsView
+import ProductDetails from "./components/Products/ProductDetails"; // Import ProductDetails
+import ProductForm from "./components/Products/ProductForm"; // Import ProductForm
 import './App.css';
 
 function App() {
@@ -46,6 +49,10 @@ function App() {
                         <Route path="/user-view" element={<CardListMini cards={cards} />} />
                         <Route path="/userview" element={<UserView />} />
                         <Route path="/uuserview" element={<MarketingPage />} />
+                        <Route path="/products" element={<ProductsView />} />
+                        <Route path="/products/:id" element={<ProductDetails />} />
+                        <Route path="/products/new" element={<ProductForm />} />
+                        <Route path="/products/:id/edit" element={<ProductForm />} />
                     </Routes>
                 </main>
 

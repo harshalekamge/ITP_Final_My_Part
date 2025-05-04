@@ -75,18 +75,16 @@ export default function Hero() {
           >
             Welcome&nbsp;to&nbsp;
             <Typography
-              component="span"
-              variant="h1"
-              sx={(theme) => ({
-                fontSize: 'inherit',
-                color: 'primary.main',
-                ...theme.applyStyles('dark', {
-                  color: 'primary.light',
-                }),
-              })}
-            >
-              GreenCircle.lk
-            </Typography>
+  component="span"
+  variant="h1"
+  sx={{
+    fontSize: 'inherit',
+    color: '#90ee90', // light green color
+  }}
+>
+  GreenCircle.lk
+</Typography>
+
           </Typography>
           <Typography
             sx={{
@@ -143,7 +141,27 @@ export default function Hero() {
             .
           </Typography>
         </Stack>
-        <StyledBox id="image" />
+
+
+
+        <StyledBox id="image1">
+  <img 
+    src="https://i.pinimg.com/736x/0c/d1/3d/0cd13d08baed213a5af4d954c21309cf.jpg" 
+    alt="Image" 
+    style={{ width: '100%', height: 'auto', borderRadius: '8px' }} 
+  />
+</StyledBox>
+<br/><br/>
+<br/>
+<br/>
+
+
+
+
+
+
+
+
       </Container>
     </Box>
   );
