@@ -34,4 +34,16 @@ Thumbs.db
 *.sublime-project
 
 # Git
-.git/ 
+.git/
+
+echo "# Node.js dependencies" >> .gitignore
+echo "node_modules/" >> .gitignore
+echo "npm-debug.log*" >> .gitignore
+echo "yarn-debug.log*" >> .gitignore
+echo "yarn-error.log*" >> .gitignore
+echo "pnpm-debug.log*" >> .gitignore
+echo "" >> .gitignore
+echo "# Build artifacts" >> .gitignore
+echo "dist/" >> .gitignore
+echo "build/" >> .gitignore
+echo "coverage/" >> .gitignore 
