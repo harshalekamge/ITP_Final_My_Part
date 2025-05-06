@@ -145,11 +145,12 @@ export default function Hero() {
 
 
         <StyledBox id="image1">
-  <img 
-    src="https://i.pinimg.com/736x/0c/d1/3d/0cd13d08baed213a5af4d954c21309cf.jpg" 
-    alt="Image" 
-    style={{ width: '100%', height: 'auto', borderRadius: '8px' }} 
-  />
+        <img 
+  src="/images/homeImage.jpg" 
+  alt="Image" 
+  style={{ width: '100%', height: '100%', borderRadius: '8px' }} 
+/>
+
 </StyledBox>
 <br/><br/>
 <br/>

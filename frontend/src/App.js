@@ -16,6 +16,8 @@ import ProductDetails from "./components/Products/ProductDetails"; // Import Pro
 import ProductForm from "./components/Products/ProductForm"; // Import ProductForm
 import './App.css';
 
+import PlasticProductSelector from './components/PlasticProductSelector/PlasticProductSelector';
+
 function App() {
     const [cards, setCards] = useState([]);
 
@@ -53,6 +55,8 @@ function App() {
                         <Route path="/products/:id" element={<ProductDetails />} />
                         <Route path="/products/new" element={<ProductForm />} />
                         <Route path="/products/:id/edit" element={<ProductForm />} />
+                        {/* Add new route for the PlasticProductSelector */}
+                        <Route path="/plastic-info" element={<PlasticProductSelector />} />
                     </Routes>
                 </main>
 

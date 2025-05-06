@@ -24,8 +24,8 @@ export default function MarketingPage(props) {
         <Divider />
         <Testimonials />
         <Divider />
-        <Highlights />
-        <Divider />{/*        <Pricing /> */}
+{/*        <Highlights />
+ */}        <Divider />{/*        <Pricing /> */}
         <Divider />{/* */}
         <FAQ />
         <Divider />{/* */}

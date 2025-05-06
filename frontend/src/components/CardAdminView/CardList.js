@@ -21,8 +21,8 @@ const CardList = ({ cards }) => {
                 All Cards - - - - - This is admin side UI
             </Typography>*/} 
 
-            {/* Buttons for Add New Card and User View */}
-            <div style={styles.buttonGroup}>
+{/*            
+<div style={styles.buttonGroup}>
                 <Link to="/add" style={{ textDecoration: "none" }}>
                     <Button variant="contained" color="primary">
                         Add New Card
@@ -34,7 +34,7 @@ const CardList = ({ cards }) => {
                     </Button>
                 </Link>
             </div>
-
+ */}
             {/* Card Grid */}
             <Grid container spacing={4} justifyContent="center">
                 {cards.length > 0 ? (
