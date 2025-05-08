@@ -18,7 +18,9 @@ app.use("/products", productRouter);
 
 // MongoDB Connection
 mongoose
-    .connect("mongodb+srv://User01:User01pass@cluster0.lzfcl.mongodb.net/")
+    .connect("mongodb+srv://huff22:hafsa123@cluster0.kzg2p.mongodb.net/GreenCycle?retryWrites=true&w=majority&appName=cluster0")
+    //    .connect("mongodb+srv://User01:User01pass@cluster0.lzfcl.mongodb.net/")
+
     .then(() => {
         console.log("✅ Connected to MongoDB");
         app.listen(5001, () => console.log("🚀 Server running on port 5001"));
