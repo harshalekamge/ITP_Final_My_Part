@@ -15,7 +15,7 @@ app.use(express.json());
 // Routes
 app.use("/cards", cardRouter);
 app.use("/products", productRouter);
-
+//mongodb+srv://User01:User01pass@cluster0.lzfcl.mongodb.net/
 // MongoDB Connection
 mongoose
     .connect("mongodb+srv://User01:User01pass@cluster0.lzfcl.mongodb.net/")
@@ -24,3 +24,5 @@ mongoose
         app.listen(5001, () => console.log("🚀 Server running on port 5001"));
     })
     .catch((err) => console.error("❌ MongoDB connection error:", err));
+
+
