@@ -8,34 +8,51 @@ import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import { styled } from '@mui/material/styles';
 
-import DevicesRoundedIcon from '@mui/icons-material/DevicesRounded';
-import EdgesensorHighRoundedIcon from '@mui/icons-material/EdgesensorHighRounded';
-import ViewQuiltRoundedIcon from '@mui/icons-material/ViewQuiltRounded';
+import CalculateIcon from '@mui/icons-material/Calculate';
+import RecyclingIcon from '@mui/icons-material/Recycling';
+import SchoolIcon from '@mui/icons-material/School';
+import ForumIcon from '@mui/icons-material/Forum';
 
 const items = [
   {
-    icon: <ViewQuiltRoundedIcon />,
-    title: 'Dashboard',
+    icon: <CalculateIcon />,
+    title: 'Plastic Footprint Calculator',
     description:
-      'This item could provide a snapshot of the most important metrics or data points related to the product.',
-    imageLight: `url("${process.env.TEMPLATE_IMAGE_URL || 'https://mui.com'}/static/images/templates/templates-images/dash-light.png")`,
-    imageDark: `url("${process.env.TEMPLATE_IMAGE_URL || 'https://mui.com'}/static/images/templates/templates-images/dash-dark.png")`,
+      'Track and analyze your daily plastic consumption with our advanced calculator. Get personalized insights and recommendations to reduce your environmental impact. Monitor your progress over time and see the real difference you\'re making for the planet.',
+    imageLight: `url('https://i.pinimg.com/736x/68/aa/bd/68aabd5263ebfac6c88ab1df65062c71.jpg')`,
+    imageDark: `url('https://i.pinimg.com/736x/68/aa/bd/68aabd5263ebfac6c88ab1df65062c71.jpg')`,
+    customStyle: {
+      backgroundSize: '120%',
+      backgroundPosition: 'center',
+    },
   },
   {
-    icon: <EdgesensorHighRoundedIcon />,
-    title: 'Mobile integration',
+    icon: <RecyclingIcon />,
+    title: 'Recycling Directories',
     description:
-      'This item could provide information about the mobile app version of the product.',
-    imageLight: `url("${process.env.TEMPLATE_IMAGE_URL || 'https://mui.com'}/static/images/templates/templates-images/mobile-light.png")`,
-    imageDark: `url("${process.env.TEMPLATE_IMAGE_URL || 'https://mui.com'}/static/images/templates/templates-images/mobile-dark.png")`,
+      'Find recycling centers, drop-off locations, and waste management facilities near you. Our comprehensive directory covers all types of materials - from plastics and paper to electronics and hazardous waste. Get detailed information about what each facility accepts.',
+    imageLight: `url('https://i.pinimg.com/736x/3f/c8/5c/3fc85cc3db55fe5ef0ddc0e44e0fd64c.jpg')`,
+    imageDark: `url('https://i.pinimg.com/736x/3f/c8/5c/3fc85cc3db55fe5ef0ddc0e44e0fd64c.jpg')`,
   },
   {
-    icon: <DevicesRoundedIcon />,
-    title: 'Available on all platforms',
+    icon: <SchoolIcon />,
+    title: 'Knowledge Hub',
     description:
-      'This item could let users know the product is available on all platforms, such as web, mobile, and desktop.',
-    imageLight: `url("${process.env.TEMPLATE_IMAGE_URL || 'https://mui.com'}/static/images/templates/templates-images/devices-light.png")`,
-    imageDark: `url("${process.env.TEMPLATE_IMAGE_URL || 'https://mui.com'}/static/images/templates/templates-images/devices-dark.png")`,
+      'Access a wealth of educational resources about environmental protection, sustainable living, and plastic pollution. From beginner guides to advanced research, our Knowledge Hub provides reliable information to help you make informed environmental decisions.',
+    imageLight: `url('https://i.pinimg.com/736x/b7/1a/61/b71a615fb8f64799e7835456070e6f26.jpg')`,
+    imageDark: `url('https://i.pinimg.com/736x/b7/1a/61/b71a615fb8f64799e7835456070e6f26.jpg')`,
+    customStyle: {
+      backgroundSize: '120%',
+      backgroundPosition: 'center',
+    },
+  },
+  {
+    icon: <ForumIcon />,
+    title: 'Community Forum',
+    description:
+      'Connect with like-minded environmentalists, share experiences, and collaborate on sustainability projects. Our Community Forum brings together individuals, organizations, and experts to discuss environmental challenges and solutions. Join local initiatives and global conversations.',
+    imageLight: `url('https://i.pinimg.com/736x/10/23/cf/1023cfdaa0635dd71e47b333e2eaf8bd.jpg')`,
+    imageDark: `url('https://i.pinimg.com/736x/10/23/cf/1023cfdaa0635dd71e47b333e2eaf8bd.jpg')`,
   },
 ];
 
@@ -87,8 +104,8 @@ function MobileLayout({ selectedItemIndex, handleItemClick, selectedFeature }) {
         <Box
           sx={(theme) => ({
             mb: 2,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
+            backgroundSize: items[selectedItemIndex]?.customStyle?.backgroundSize || 'cover',
+            backgroundPosition: items[selectedItemIndex]?.customStyle?.backgroundPosition || 'center',
             minHeight: 280,
             backgroundImage: 'var(--items-imageLight)',
             ...theme.applyStyles('dark', {
@@ -152,15 +169,15 @@ export default function Features() {
           gutterBottom
           sx={{ color: 'text.primary' }}
         >
-          Product features
+          Platform Features
         </Typography>
         <Typography
           variant="body1"
           sx={{ color: 'text.secondary', mb: { xs: 2, sm: 4 } }}
         >
-          Provide a brief overview of the key features of the product. For example,
-          you could list the number of features, their types or benefits, and
-          add-ons.
+          Discover the powerful tools and resources that make GreenCircle.lk your complete environmental platform. 
+          From tracking your impact to connecting with communities, our features empower you to make sustainable 
+          choices and create positive environmental change.
         </Typography>
       </Box>
       <Box
@@ -247,10 +264,11 @@ export default function Features() {
           >
             <Box
               sx={(theme) => ({
-                m: 'auto',
-                width: 420,
-                height: 500,
-                backgroundSize: 'contain',
+                width: '100%',
+                height: '100%',
+                backgroundSize: items[selectedItemIndex]?.customStyle?.backgroundSize || 'cover',
+                backgroundPosition: items[selectedItemIndex]?.customStyle?.backgroundPosition || 'center',
+                backgroundRepeat: 'no-repeat',
                 backgroundImage: 'var(--items-imageLight)',
                 ...theme.applyStyles('dark', {
                   backgroundImage: 'var(--items-imageDark)',

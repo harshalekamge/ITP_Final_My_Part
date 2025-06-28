@@ -11,46 +11,46 @@ import { useTheme } from '@mui/system';
 
 const userTestimonials = [
   {
-    avatar: <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />,
-    name: 'Remy Sharp',
-    occupation: 'Senior Engineer',
+    avatar: <Avatar alt="Sarah Chen" src="/static/images/avatar/1.jpg" />,
+    name: 'Sarah Chen',
+    occupation: 'Environmental Scientist',
     testimonial:
-      "I absolutely love how versatile this product is! Whether I'm tackling work projects or indulging in my favorite hobbies, it seamlessly adapts to my changing needs. Its intuitive design has truly enhanced my daily routine, making tasks more efficient and enjoyable.",
+      "The Plastic Footprint Calculator on GreenCircle.lk completely changed how I view my daily consumption. It's incredibly accurate and eye-opening - I discovered I was using 15% more plastic than I thought. The platform helped me reduce my footprint by 40% in just two months!",
   },
   {
-    avatar: <Avatar alt="Travis Howard" src="/static/images/avatar/2.jpg" />,
-    name: 'Travis Howard',
-    occupation: 'Lead Product Designer',
+    avatar: <Avatar alt="Marcus Rodriguez" src="/static/images/avatar/2.jpg" />,
+    name: 'Marcus Rodriguez',
+    occupation: 'Sustainability Consultant',
     testimonial:
-      "One of the standout features of this product is the exceptional customer support. In my experience, the team behind this product has been quick to respond and incredibly helpful. It's reassuring to know that they stand firmly behind their product.",
+      "As a sustainability consultant, I recommend GreenCircle.lk to all my clients. The Recycling Directories feature is a game-changer - it shows exactly where to recycle different materials in your area. The Knowledge Hub has become my go-to resource for environmental education.",
   },
   {
-    avatar: <Avatar alt="Cindy Baker" src="/static/images/avatar/3.jpg" />,
-    name: 'Cindy Baker',
-    occupation: 'CTO',
+    avatar: <Avatar alt="Emma Thompson" src="/static/images/avatar/3.jpg" />,
+    name: 'Emma Thompson',
+    occupation: 'Community Organizer',
     testimonial:
-      'The level of simplicity and user-friendliness in this product has significantly simplified my life. I appreciate the creators for delivering a solution that not only meets but exceeds user expectations.',
+      "The Community Forum on GreenCircle.lk has connected me with like-minded environmentalists in my city. We've organized three successful beach cleanups and started a local plastic-free initiative. The platform truly brings people together for a greener future.",
   },
   {
-    avatar: <Avatar alt="Remy Sharp" src="/static/images/avatar/4.jpg" />,
-    name: 'Julia Stewart',
-    occupation: 'Senior Engineer',
+    avatar: <Avatar alt="David Kim" src="/static/images/avatar/4.jpg" />,
+    name: 'David Kim',
+    occupation: 'Small Business Owner',
     testimonial:
-      "I appreciate the attention to detail in the design of this product. The small touches make a big difference, and it's evident that the creators focused on delivering a premium experience.",
+      "GreenCircle.lk's Knowledge Hub helped me transform my restaurant into a plastic-free establishment. The detailed guides on sustainable alternatives and the recycling directory made the transition smooth. My customers love our eco-friendly approach!",
   },
   {
-    avatar: <Avatar alt="Travis Howard" src="/static/images/avatar/5.jpg" />,
-    name: 'John Smith',
-    occupation: 'Product Designer',
+    avatar: <Avatar alt="Lisa Park" src="/static/images/avatar/5.jpg" />,
+    name: 'Lisa Park',
+    occupation: 'School Teacher',
     testimonial:
-      "I've tried other similar products, but this one stands out for its innovative features. It's clear that the makers put a lot of thought into creating a solution that truly addresses user needs.",
+      "I use GreenCircle.lk in my classroom to teach students about environmental responsibility. The Plastic Footprint Calculator is perfect for hands-on learning, and the Knowledge Hub provides age-appropriate content. My students are now environmental advocates!",
   },
   {
-    avatar: <Avatar alt="Cindy Baker" src="/static/images/avatar/6.jpg" />,
-    name: 'Daniel Wolf',
-    occupation: 'CDO',
+    avatar: <Avatar alt="James Wilson" src="/static/images/avatar/6.jpg" />,
+    name: 'James Wilson',
+    occupation: 'City Council Member',
     testimonial:
-      "The quality of this product exceeded my expectations. It's durable, well-designed, and built to last. Definitely worth the investment!",
+      "GreenCircle.lk has been instrumental in our city's sustainability initiatives. The platform's data and community insights helped us implement effective recycling programs. The Community Forum keeps us connected with residents who are passionate about environmental protection.",
   },
 ];
 
@@ -109,9 +109,9 @@ export default function Testimonials() {
           Testimonials
         </Typography>
         <Typography variant="body1" sx={{ color: 'text.secondary' }}>
-          See what our customers love about our products. Discover how we excel in
-          efficiency, durability, and satisfaction. Join us for quality, innovation,
-          and reliable support.
+          Discover how GreenCircle.lk is empowering individuals and communities to make sustainable choices. 
+          From reducing plastic footprints to organizing environmental initiatives, our users are creating 
+          real change. Join thousands of eco-conscious individuals making a difference for our planet.
         </Typography>
       </Box>
       <Grid container spacing={2}>
