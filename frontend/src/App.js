@@ -17,6 +17,8 @@ import ProductForm from "./components/Products/ProductForm"; // Import ProductFo
 import './App.css';
 
 import PlasticProductSelector from './components/PlasticProductSelector/PlasticProductSelector';
+import RecycleCentersPage from "./components/RecycleCenters/RecycleCentersPage";
+import EcoFootprintCalculator from "./components/EcoFootprint/EcoFootprintCalculator";
 
 function App() {
     const [cards, setCards] = useState([]);
@@ -58,6 +60,8 @@ function App() {
                         <Route path="/products/:id/edit" element={<ProductForm />} />
                         {/* Add new route for the PlasticProductSelector */}
                         <Route path="/plastic-info" element={<PlasticProductSelector />} />
+                        <Route path="/recycle-centers" element={<RecycleCentersPage />} />
+                        <Route path="/eco-footprint" element={<EcoFootprintCalculator />} />
                     </Routes>
                 </main>
 

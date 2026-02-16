@@ -21,7 +21,6 @@ const CardList = ({ cards }) => {
                 All Cards - - - - - This is admin side UI
             </Typography>*/} 
 
-main
 <div style={styles.buttonGroup}>
                 <Link to="/add" style={{ textDecoration: "none" }}>
                     <Button variant="contained" color="primary">
@@ -34,7 +33,6 @@ main
                     </Button>
                 </Link>
             </div>
-main
             {/* Card Grid */}
             <Grid container spacing={4} justifyContent="center">
                 {cards.length > 0 ? (

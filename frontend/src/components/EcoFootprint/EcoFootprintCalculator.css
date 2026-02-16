@@ -1,0 +1,157 @@
+.eco-page {
+  max-width: 1150px;
+  margin: 20px auto;
+  padding: 16px;
+  display: grid;
+  gap: 16px;
+  grid-template-columns: 1.1fr 0.9fr;
+}
+
+.eco-card {
+  background: #ffffff;
+  border: 1px solid #dce7df;
+  border-radius: 16px;
+  padding: 18px;
+  box-shadow: 0 8px 24px rgba(16, 42, 31, 0.06);
+}
+
+.eco-form h1 {
+  margin: 0 0 6px;
+  color: #102a1f;
+}
+
+.eco-form p {
+  margin: 0 0 14px;
+  color: #4b6b5b;
+}
+
+.eco-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.eco-grid label {
+  font-weight: 600;
+  color: #223a2d;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.eco-grid input,
+.eco-grid select {
+  border: 1px solid #d6e4d9;
+  border-radius: 10px;
+  padding: 10px 11px;
+  font-size: 14px;
+}
+
+.eco-metrics {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.eco-metrics h3 {
+  margin: 0 0 4px;
+  font-size: 14px;
+  color: #4b6b5b;
+}
+
+.big {
+  font-weight: 700;
+  color: #102a1f;
+}
+
+.gauge-wrap {
+  display: grid;
+  place-items: center;
+  margin: 6px 0 14px;
+}
+
+.gauge {
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+}
+
+.gauge-inner {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 1px solid #dce7df;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  font-size: 30px;
+  color: #102a1f;
+}
+
+.gauge-label {
+  margin-top: 8px;
+  color: #4b6b5b;
+  font-size: 13px;
+}
+
+.bar-chart {
+  border-top: 1px solid #e8efe9;
+  padding-top: 10px;
+}
+
+.bar-row {
+  display: grid;
+  grid-template-columns: 120px 1fr 56px;
+  gap: 10px;
+  align-items: center;
+  margin: 7px 0;
+}
+
+.bar-name {
+  font-size: 13px;
+  color: #1f3f30;
+}
+
+.bar-track {
+  width: 100%;
+  height: 10px;
+  border-radius: 999px;
+  background: #e8efe9;
+  overflow: hidden;
+}
+
+.bar-fill {
+  height: 100%;
+  border-radius: 999px;
+}
+
+.bar-value {
+  text-align: right;
+  font-size: 13px;
+  color: #2f4f3d;
+}
+
+.tips {
+  margin: 14px 0 0;
+  padding-left: 18px;
+}
+
+.tips li {
+  color: #1f3f30;
+  margin: 6px 0;
+}
+
+@media (max-width: 950px) {
+  .eco-page {
+    grid-template-columns: 1fr;
+  }
+
+  .eco-grid,
+  .eco-metrics {
+    grid-template-columns: 1fr;
+  }
+}

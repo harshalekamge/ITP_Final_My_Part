@@ -6,6 +6,8 @@ const navItems = [
   { to: "/", label: "Home", end: true },
   { to: "/knowledge-hub", label: "Knowledge Hub" },
   { to: "/userview", label: "Our Products" },
+  { to: "/recycle-centers", label: "Recycle Centers" },
+  { to: "/eco-footprint", label: "Eco Calculator" },
   { to: "/plastic-info", label: "PlastiBot" },
 ];
 
