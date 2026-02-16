@@ -7,6 +7,7 @@ const cardRouter = require("./Routes/CardRoutes");
 const productRouter = require("./Routes/ProductRoutes"); // Import new route
 
 const app = express();
+const MONGO_URI = process.env.MONGO_URI || "mongodb://127.0.0.1:27017/itp_final";
 
 // Middleware
 app.use(cors());
@@ -15,10 +16,10 @@ app.use(express.json());
 // Routes
 app.use("/cards", cardRouter);
 app.use("/products", productRouter);
-//mongodb+srv://User01:User01pass@cluster0.lzfcl.mongodb.net/
+
 // MongoDB Connection
 mongoose
-    .connect("mongodb+srv://User01:User01pass@cluster0.lzfcl.mongodb.net/")
+    .connect(MONGO_URI)
     .then(() => {
         console.log("✅ Connected to MongoDB");
         app.listen(5001, () => console.log("🚀 Server running on port 5001"));

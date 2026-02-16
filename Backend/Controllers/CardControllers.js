@@ -47,13 +47,12 @@ const getById = async (req, res, next) => {
     try{
         card = await Card.findById(id);
     } catch(err) {
-        console.log(err);
+        return res.status(500).json({ message: "Database error", error: err.message });
     }
-    // not avb users
     if (!card) {
-        return res.status(400).json({ message: "User not available" });
+        return res.status(404).json({ message: "Card not found" });
     }
-    return res.status(201).json({ card });
+    return res.status(200).json({ card });
 }
 
 //update function
@@ -62,16 +61,18 @@ const updateCard = async(req,res,next) =>{
     const { title, imageLink, shortDescription, longDescription } = req.body;
     let cardUpd;
     try{
-        cardUpd = await Card.findByIdAndUpdate(id,
-            {title, imageLink, shortDescription, longDescription});
-            cardUpd = awaits.cardUpd.save();
+        cardUpd = await Card.findByIdAndUpdate(
+            id,
+            { title, imageLink, shortDescription, longDescription },
+            { new: true, runValidators: true }
+        );
     }catch(err){
-        console.log(err);
+        return res.status(500).json({ message: "Database error", error: err.message });
     }
     if (!cardUpd) {
-        return res.status(400).json({ message: "Cant update the card" });
+        return res.status(404).json({ message: "Card not found" });
     }
-    return res.status(201).json({ cardUpd });
+    return res.status(200).json({ message: "Card updated successfully", card: cardUpd });
 }
 
 //delete
@@ -81,12 +82,12 @@ const deleteCard = async(req,res,next)=>{
     try{
         card = await Card.findByIdAndDelete(id)
     }catch(err){
-        console.log(err);
+        return res.status(500).json({ message: "Database error", error: err.message });
     }
     if (!card) {
-        return res.status(400).json({ message: "Cant delete the card" });
+        return res.status(404).json({ message: "Card not found" });
     }
-    return res.status(201).json({ card });
+    return res.status(200).json({ message: "Card deleted successfully", card });
 }
 
 exports.getAllCards = getAllCards;
