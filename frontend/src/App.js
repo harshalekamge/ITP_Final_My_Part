@@ -1,6 +1,6 @@
 // src/App.js
 import React, { useEffect, useState } from "react";
-import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, useLocation, Navigate } from "react-router-dom";
 import axios from "axios";
 import CardList from "./components/CardAdminView/CardList";
 import AddCardForm from "./components/CardAdminView/AddCardForm";
@@ -44,13 +44,14 @@ function App() {
                 {/* Main Content */}
                 <main className="content">
                     <Routes>
-                        <Route path="/" element={<CardList cards={cards} />} />
+                        <Route path="/" element={<MarketingPage />} />
+                        <Route path="/knowledge-hub" element={<CardList cards={cards} />} />
+                        <Route path="/uuserview" element={<Navigate to="/" replace />} />
                         <Route path="/add" element={<AddCardForm setCards={setCards} />} />
                         <Route path="/edit/:id" element={<EditCardForm setCards={setCards} />} />
                         <Route path="/card/:id" element={<CardDetails />} />
                         <Route path="/user-view" element={<CardListMini cards={cards} />} />
                         <Route path="/userview" element={<UserView />} />
-                        <Route path="/uuserview" element={<MarketingPage />} />
                         <Route path="/products" element={<ProductsView />} />
                         <Route path="/products/:id" element={<ProductDetails />} />
                         <Route path="/products/new" element={<ProductForm />} />
