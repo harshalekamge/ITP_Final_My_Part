@@ -22,7 +22,7 @@ const ProductForm = () => {
   useEffect(() => {
     if (isEdit) {
       const fetchProduct = async () => {
-        const res = await axios.get(`http://localhost:5001/products/${id}`);
+        const res = await axios.get(`http://localhost:5001/products/${id}`, { withCredentials: true });
         setFormData(res.data.product);
       };
       fetchProduct();
@@ -37,9 +37,9 @@ const ProductForm = () => {
     e.preventDefault();
     try {
       if (isEdit) {
-        await axios.put(`http://localhost:5001/products/${id}`, formData);
+        await axios.put(`http://localhost:5001/products/${id}`, formData, { withCredentials: true });
       } else {
-        await axios.post("http://localhost:5001/products", formData);
+        await axios.post("http://localhost:5001/products", formData, { withCredentials: true });
       }
       navigate("/products");
     } catch (err) {

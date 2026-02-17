@@ -17,6 +17,7 @@ frontend/.env.production.local
 Backend/node_modules/
 Backend/.env
 Backend/.env.local
+.env
 
 # Logs
 logs

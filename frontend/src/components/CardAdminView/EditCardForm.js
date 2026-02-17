@@ -30,7 +30,7 @@ const EditCardForm = ({ setCards }) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.put(`http://localhost:5001/cards/${id}`, formData);
+            await axios.put(`http://localhost:5001/cards/${id}`, formData, { withCredentials: true });
             setCards((prevCards) =>
                 prevCards.map((card) => (card._id === id ? { ...card, ...formData } : card))
             );

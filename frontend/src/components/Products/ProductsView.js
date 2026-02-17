@@ -4,8 +4,10 @@ import axios from "axios";
 import { Link } from "react-router-dom"; // For navigation
 import "./ProductsView.css";
 import CardItem from "./CardItem";
+import { useAuth } from "../../context/AuthContext";
 
 const ProductsView = () => {
+  const { isAdmin } = useAuth();
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -30,7 +32,7 @@ const ProductsView = () => {
     if (!window.confirm("Are you sure you want to delete this product?")) return;
 
     try {
-      await axios.delete(`http://localhost:5001/products/${id}`);
+      await axios.delete(`http://localhost:5001/products/${id}`, { withCredentials: true });
       setProducts(products.filter((product) => product._id !== id));
     } catch (err) {
       console.error("Error deleting product:", err);
@@ -51,9 +53,11 @@ const ProductsView = () => {
       </div>
 
       {/* Add Product Button */}
-      <div className="actions">
-        <Link to="/products/new" className="btn btn-add">+  Add New Product</Link>
-      </div>
+      {isAdmin ? (
+        <div className="actions">
+          <Link to="/admin/products/new" className="btn btn-add">+  Add New Product</Link>
+        </div>
+      ) : null}
 
       {/* Product Grid */}
       <div className="card-grid">
@@ -66,8 +70,12 @@ const ProductsView = () => {
               {/* Actions Bar */}
               <div className="card-actions">
                 <Link to={`/products/${product._id}`} className="action-link">VIEW</Link>
-                <Link to={`/products/${product._id}/edit`} className="action-link action-edit">EDIT</Link>
-                <button onClick={() => handleDelete(product._id)} className="action-link action-delete">DELETE</button>
+                {isAdmin ? (
+                  <>
+                    <Link to={`/admin/products/${product._id}/edit`} className="action-link action-edit">EDIT</Link>
+                    <button onClick={() => handleDelete(product._id)} className="action-link action-delete">DELETE</button>
+                  </>
+                ) : null}
               </div>
             </div>
           ))}

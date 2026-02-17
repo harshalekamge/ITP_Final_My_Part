@@ -1,24 +1,32 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Grid, Card, CardContent, Typography, CardMedia, Button } from "@mui/material";
+import { useAuth } from "../../context/AuthContext";
 
 const CardListMini = ({ cards }) => {
+    const { isAdmin } = useAuth();
+
     return (
         <div style={styles.container}>
             {/* Heading <Typography variant="h3" style={styles.heading}>
                 All Cards - - - - - This is user side UI
             </Typography>*/}
+
+            {isAdmin ? (
+                <div style={styles.buttonGroup}>
+                    <Link to="/admin/cards/new" style={{ textDecoration: "none" }}>
+                        <Button variant="contained" color="primary">
+                            Add New Card
+                        </Button>
+                    </Link>
+                    <Link to="/knowledge-hub" style={{ textDecoration: "none" }}>
+                        <Button variant="contained" color="secondary">
+                            Public Hub
+                        </Button>
+                    </Link>
+                </div>
+            ) : null}
             
-
-            {/* Admin View Button */}
-            <div style={styles.buttonGroup}>
-                <Link to="/" style={{ textDecoration: "none" }}>
-                    <Button variant="contained" color="secondary">
-                        Admin View
-                    </Button>
-                </Link>
-            </div>
-
             {/* Card Grid */}
             <Grid container spacing={4} justifyContent="center">
                 {cards.length > 0 ? (
@@ -79,7 +87,7 @@ const styles = {
         display: "flex",
         gap: "10px",
         justifyContent: "center",
-        marginBottom: "70px",
+        marginBottom: "30px",
     },
     card: {
         maxWidth: "345px",
