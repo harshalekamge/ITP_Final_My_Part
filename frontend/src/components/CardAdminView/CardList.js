@@ -2,11 +2,14 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Grid, Card, CardContent, Typography, CardMedia, Button, Box } from "@mui/material";
 import "./CardList.css"; // Import the CSS file
+import { useAuth } from "../../context/AuthContext";
 
 const CardList = ({ cards }) => {
+    const { isAdmin } = useAuth();
+
     const handleDelete = (id) => {
         if (window.confirm("Are you sure you want to delete this card?")) {
-            fetch(`http://localhost:5001/cards/${id}`, { method: "DELETE" })
+            fetch(`http://localhost:5001/cards/${id}`, { method: "DELETE", credentials: "include" })
                 .then((res) => res.json())
                 .then(() => {
                     window.location.reload(); // Refresh page after deletion
@@ -21,18 +24,22 @@ const CardList = ({ cards }) => {
                 All Cards - - - - - This is admin side UI
             </Typography>*/} 
 
-<div style={styles.buttonGroup}>
-                <Link to="/add" style={{ textDecoration: "none" }}>
+            {isAdmin ? (
+              <>
+                <div style={styles.buttonGroup}>
+                  <Link to="/admin/cards/new" style={{ textDecoration: "none" }}>
                     <Button variant="contained" color="primary">
-                        Add New Card
+                      Add New Card
                     </Button>
-                </Link>
-                <Link to="/user-view" style={{ textDecoration: "none" }}>
+                  </Link>
+                  <Link to="/knowledge-hub" style={{ textDecoration: "none" }}>
                     <Button variant="contained" color="secondary">
-                        User View
+                      Public Hub
                     </Button>
-                </Link>
-            </div>
+                  </Link>
+                </div>
+              </>
+            ) : null}
             {/* Card Grid */}
             <Grid container spacing={4} justifyContent="center">
                 {cards.length > 0 ? (
@@ -58,14 +65,18 @@ const CardList = ({ cards }) => {
                                         Learn More
                                         </Button>
                                     </Link>
-                                    <Link to={`/edit/${card._id}`} style={{ textDecoration: "none" }}>
-                                        <Button size="small" color="secondary">
-                                            Edit
+                                    {isAdmin ? (
+                                      <>
+                                        <Link to={`/admin/cards/${card._id}/edit`} style={{ textDecoration: "none" }}>
+                                            <Button size="small" color="secondary">
+                                                Edit
+                                            </Button>
+                                        </Link>
+                                        <Button size="small" color="error" onClick={() => handleDelete(card._id)}>
+                                            Delete
                                         </Button>
-                                    </Link>
-                                    <Button size="small" color="error" onClick={() => handleDelete(card._id)}>
-                                        Delete
-                                    </Button>
+                                      </>
+                                    ) : null}
                                 </Box>
                             </Card>
                         </Grid>

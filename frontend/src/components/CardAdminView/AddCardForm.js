@@ -17,7 +17,7 @@ const AddCardForm = ({ setCards }) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post("http://localhost:5001/cards", formData);
+            const response = await axios.post("http://localhost:5001/cards", formData, { withCredentials: true });
             setCards((prevCards) => [...prevCards, response.data.card]);
             alert("Card added successfully!");
         } catch (error) {

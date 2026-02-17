@@ -2,7 +2,6 @@
 import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route, useLocation, Navigate } from "react-router-dom";
 import axios from "axios";
-import CardList from "./components/CardAdminView/CardList";
 import AddCardForm from "./components/CardAdminView/AddCardForm";
 import EditCardForm from "./components/CardAdminView/EditCardForm";
 import CardDetails from "./components/CardAdminView/CardDetails";
@@ -19,6 +18,8 @@ import './App.css';
 import PlasticProductSelector from './components/PlasticProductSelector/PlasticProductSelector';
 import RecycleCentersPage from "./components/RecycleCenters/RecycleCentersPage";
 import EcoFootprintCalculator from "./components/EcoFootprint/EcoFootprintCalculator";
+import LoginPage from "./components/Auth/LoginPage";
+import ProtectedRoute from "./components/Auth/ProtectedRoute";
 
 function App() {
     const [cards, setCards] = useState([]);
@@ -47,17 +48,90 @@ function App() {
                 <main className="content">
                     <Routes>
                         <Route path="/" element={<MarketingPage />} />
-                        <Route path="/knowledge-hub" element={<CardList cards={cards} />} />
+                        <Route path="/knowledge-hub" element={<CardListMini cards={cards} />} />
+                        <Route path="/admin/knowledge-hub" element={<Navigate to="/knowledge-hub" replace />} />
+                        <Route
+                          path="/admin/panel"
+                          element={
+                            <ProtectedRoute adminOnly>
+                              <div style={{ padding: "2rem", textAlign: "center" }}>
+                                This is admin panel.
+                              </div>
+                            </ProtectedRoute>
+                          }
+                        />
                         <Route path="/uuserview" element={<Navigate to="/" replace />} />
-                        <Route path="/add" element={<AddCardForm setCards={setCards} />} />
-                        <Route path="/edit/:id" element={<EditCardForm setCards={setCards} />} />
+                        <Route
+                          path="/add"
+                          element={
+                            <ProtectedRoute adminOnly>
+                              <AddCardForm setCards={setCards} />
+                            </ProtectedRoute>
+                          }
+                        />
+                        <Route
+                          path="/edit/:id"
+                          element={
+                            <ProtectedRoute adminOnly>
+                              <EditCardForm setCards={setCards} />
+                            </ProtectedRoute>
+                          }
+                        />
+                        <Route
+                          path="/admin/cards/new"
+                          element={
+                            <ProtectedRoute adminOnly>
+                              <AddCardForm setCards={setCards} />
+                            </ProtectedRoute>
+                          }
+                        />
+                        <Route
+                          path="/admin/cards/:id/edit"
+                          element={
+                            <ProtectedRoute adminOnly>
+                              <EditCardForm setCards={setCards} />
+                            </ProtectedRoute>
+                          }
+                        />
                         <Route path="/card/:id" element={<CardDetails />} />
                         <Route path="/user-view" element={<CardListMini cards={cards} />} />
                         <Route path="/userview" element={<UserView />} />
                         <Route path="/products" element={<ProductsView />} />
                         <Route path="/products/:id" element={<ProductDetails />} />
-                        <Route path="/products/new" element={<ProductForm />} />
-                        <Route path="/products/:id/edit" element={<ProductForm />} />
+                        <Route
+                          path="/products/new"
+                          element={
+                            <ProtectedRoute adminOnly>
+                              <ProductForm />
+                            </ProtectedRoute>
+                          }
+                        />
+                        <Route
+                          path="/products/:id/edit"
+                          element={
+                            <ProtectedRoute adminOnly>
+                              <ProductForm />
+                            </ProtectedRoute>
+                          }
+                        />
+                        <Route
+                          path="/admin/products/new"
+                          element={
+                            <ProtectedRoute adminOnly>
+                              <ProductForm />
+                            </ProtectedRoute>
+                          }
+                        />
+                        <Route
+                          path="/admin/products/:id/edit"
+                          element={
+                            <ProtectedRoute adminOnly>
+                              <ProductForm />
+                            </ProtectedRoute>
+                          }
+                        />
+                        <Route path="/login" element={<Navigate to="/admin/login" replace />} />
+                        <Route path="/admin/login" element={<LoginPage />} />
                         {/* Add new route for the PlasticProductSelector */}
                         <Route path="/plastic-info" element={<PlasticProductSelector />} />
                         <Route path="/recycle-centers" element={<RecycleCentersPage />} />
